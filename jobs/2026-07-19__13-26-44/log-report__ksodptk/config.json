@@ -1,0 +1,11 @@
+{
+    "task": {
+        "path": "."
+    },
+    "trial_name": "log-report__ksodptk",
+    "trials_dir": "jobs\\2026-07-19__13-26-44",
+    "agent": {
+        "name": "nop"
+    },
+    "job_id": "1a07fd82-fced-466b-8d58-f6072a667924"
+}

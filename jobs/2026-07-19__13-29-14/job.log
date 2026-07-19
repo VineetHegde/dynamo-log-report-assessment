@@ -1,0 +1,23 @@
+Skipping image OS validation for hb__4bd40f12fde1b198254ea04da0c6b902: docker inspect returned 1
+Collecting main service artifacts
+Failed to download artifact '/app/report.json' from service 'main' (best-effort)
+Traceback (most recent call last):
+  File "C:\Users\vinee\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\trial\artifact_handler.py", line 330, in _download_artifact
+    await source_env.service_download_file(
+    ...<3 lines>...
+    )
+  File "C:\Users\vinee\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1052, in service_download_file
+    await self.download_file(source_path, target_path)
+  File "C:\Users\vinee\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 1037, in download_file
+    await self._platform.download_file(source_path, target_path)
+  File "C:\Users\vinee\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker_unix.py", line 185, in download_file
+    await self._env._run_docker_compose_command(
+    ...<2 lines>...
+    )
+  File "C:\Users\vinee\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker.py", line 656, in _run_docker_compose_command
+    raise RuntimeError(
+    ...<5 lines>...
+    )
+RuntimeError: Docker compose command failed for environment log-report. Command: docker compose --project-name log-report__uag3ccn__env --project-directory G:\Handshake AI Projects\Dynamo\log-report\environment -f C:\Users\vinee\AppData\Local\Temp\tmp_bjoil52\log-report__UAG3ccn__env-docker-compose-resources.json -f C:\Users\vinee\AppData\Roaming\uv\tools\harbor\Lib\site-packages\harbor\environments\docker\docker-compose-build.yaml -f C:\Users\vinee\AppData\Local\Temp\tmpje4oqvc3\docker-compose-environment.json -f C:\Users\vinee\AppData\Local\Temp\tmpzby09nhe\docker-compose-mounts.json cp main:/app/report.json jobs\2026-07-19__13-29-14\log-report__UAG3ccn\artifacts\app\report.json. Return code: 1. Stdout:  log-report__uag3ccn__env-main-1 Copying log-report__uag3ccn__env-main-1:/app/report.json to jobs\2026-07-19__13-29-14\log-report__UAG3ccn\artifacts\app\report.json
+Error response from daemon: Could not find the file /app/report.json in container 54094b57e1bf8d3953a6cce3e680b49fef1c76210ff77b371dcc6d4bade760a3
+. Stderr: None. 
