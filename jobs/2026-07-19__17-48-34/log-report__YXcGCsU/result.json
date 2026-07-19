@@ -1,0 +1,110 @@
+{
+    "id": "13eb425c-faff-4cd3-8216-e112cb528c96",
+    "task_name": "dynamo/log-report",
+    "trial_name": "log-report__YXcGCsU",
+    "trial_uri": "file:///G:/Handshake%20AI%20Projects/Dynamo/log-report/jobs/2026-07-19__17-48-34/log-report__YXcGCsU",
+    "task_id": {
+        "path": "."
+    },
+    "source": null,
+    "task_checksum": "221dad7975654ec708b5845984559b7078f91d8b0293e8aff2c8e1ba675abab8",
+    "config": {
+        "task": {
+            "path": ".",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "log-report__YXcGCsU",
+        "trials_dir": "jobs\\2026-07-19__17-48-34",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "job_id": "6db28932-4fce-4566-8a41-5ce45d05fc7d"
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "exception_info": null,
+    "started_at": "2026-07-19T12:18:34.711292Z",
+    "finished_at": "2026-07-19T12:18:54.713702Z",
+    "environment_setup": {
+        "started_at": "2026-07-19T12:18:35.230149Z",
+        "finished_at": "2026-07-19T12:18:41.616342Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-07-19T12:18:41.616432Z",
+        "finished_at": "2026-07-19T12:18:41.616556Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-07-19T12:18:41.616694Z",
+        "finished_at": "2026-07-19T12:18:41.616851Z"
+    },
+    "verifier": {
+        "started_at": "2026-07-19T12:18:42.045296Z",
+        "finished_at": "2026-07-19T12:18:43.671132Z"
+    },
+    "step_results": null
+}

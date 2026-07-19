@@ -1,0 +1,65 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 4,
+            "passed": 1,
+            "failed": 3,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1784463622.776578,
+            "stop": 1784463622.8102095
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_criterion_1",
+                "status": "passed",
+                "duration": 0.00044225299996014655,
+                "start": 1784463622.7953587,
+                "stop": 1784463622.796968,
+                "retries": 0,
+                "file_path": "test_outputs.py"
+            },
+            {
+                "name": "test_outputs.py::test_criterion_2",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0005417440000883289,
+                "start": 1784463622.7972157,
+                "stop": 1784463622.8040645,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_criterion_2():\n        \"\"\"2. The JSON report must contain the key `total_requests` matching the total number of requests.\"\"\"\n        data = json.loads(Path(\"/app/report.json\").read_text())\n>       assert data.get(\"total_requests\") == 6, \"Incorrect total_requests\"\nE       AssertionError: Incorrect total_requests\nE       assert 999 == 6\nE        +  where 999 = <built-in method get of dict object at 0x7b7c589d4f00>('total_requests')\nE        +    where <built-in method get of dict object at 0x7b7c589d4f00> = {'top_path': '/wrong-path.html', 'total_requests': 999, 'unique_ips': 0}.get\n\n/tests/test_outputs.py:11: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_criterion_3",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0005147020001459168,
+                "start": 1784463622.8042092,
+                "stop": 1784463622.8066077,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_criterion_3():\n        \"\"\"3. The JSON report must contain the key `unique_ips` matching the count of unique IP addresses.\"\"\"\n        data = json.loads(Path(\"/app/report.json\").read_text())\n>       assert data.get(\"unique_ips\") == 3, \"Incorrect unique_ips\"\nE       AssertionError: Incorrect unique_ips\nE       assert 0 == 3\nE        +  where 0 = <built-in method get of dict object at 0x7b7c589b5c80>('unique_ips')\nE        +    where <built-in method get of dict object at 0x7b7c589b5c80> = {'top_path': '/wrong-path.html', 'total_requests': 999, 'unique_ips': 0}.get\n\n/tests/test_outputs.py:16: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_criterion_4",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0005060970000840825,
+                "start": 1784463622.8069,
+                "stop": 1784463622.8091693,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_criterion_4():\n        \"\"\"4. The JSON report must contain the key `top_path` matching the most frequently requested path.\"\"\"\n        data = json.loads(Path(\"/app/report.json\").read_text())\n>       assert data.get(\"top_path\") == \"/index.html\", \"Incorrect top_path\"\nE       AssertionError: Incorrect top_path\nE       assert '/wrong-path.html' == '/index.html'\nE         \nE         - /index.html\nE         + /wrong-path.html\n\n/tests/test_outputs.py:21: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            }
+        ]
+    }
+}

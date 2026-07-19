@@ -1,0 +1,53 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.12, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 4 items
+
+../tests/test_outputs.py .FFF                                            [100%]
+
+=================================== FAILURES ===================================
+_______________________________ test_criterion_2 _______________________________
+
+    def test_criterion_2():
+        """2. The JSON report must contain the key `total_requests` matching the total number of requests."""
+        data = json.loads(Path("/app/report.json").read_text())
+>       assert data.get("total_requests") == 6, "Incorrect total_requests"
+E       AssertionError: Incorrect total_requests
+E       assert 999 == 6
+E        +  where 999 = <built-in method get of dict object at 0x7b7c589d4f00>('total_requests')
+E        +    where <built-in method get of dict object at 0x7b7c589d4f00> = {'top_path': '/wrong-path.html', 'total_requests': 999, 'unique_ips': 0}.get
+
+/tests/test_outputs.py:11: AssertionError
+_______________________________ test_criterion_3 _______________________________
+
+    def test_criterion_3():
+        """3. The JSON report must contain the key `unique_ips` matching the count of unique IP addresses."""
+        data = json.loads(Path("/app/report.json").read_text())
+>       assert data.get("unique_ips") == 3, "Incorrect unique_ips"
+E       AssertionError: Incorrect unique_ips
+E       assert 0 == 3
+E        +  where 0 = <built-in method get of dict object at 0x7b7c589b5c80>('unique_ips')
+E        +    where <built-in method get of dict object at 0x7b7c589b5c80> = {'top_path': '/wrong-path.html', 'total_requests': 999, 'unique_ips': 0}.get
+
+/tests/test_outputs.py:16: AssertionError
+_______________________________ test_criterion_4 _______________________________
+
+    def test_criterion_4():
+        """4. The JSON report must contain the key `top_path` matching the most frequently requested path."""
+        data = json.loads(Path("/app/report.json").read_text())
+>       assert data.get("top_path") == "/index.html", "Incorrect top_path"
+E       AssertionError: Incorrect top_path
+E       assert '/wrong-path.html' == '/index.html'
+E         
+E         - /index.html
+E         + /wrong-path.html
+
+/tests/test_outputs.py:21: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED ../tests/test_outputs.py::test_criterion_1
+FAILED ../tests/test_outputs.py::test_criterion_2 - AssertionError: Incorrect...
+FAILED ../tests/test_outputs.py::test_criterion_3 - AssertionError: Incorrect...
+FAILED ../tests/test_outputs.py::test_criterion_4 - AssertionError: Incorrect...
+========================= 3 failed, 1 passed in 0.06s ==========================
